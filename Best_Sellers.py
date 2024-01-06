@@ -181,6 +181,28 @@ plt.xlabel("Product Category")
 plt.ylabel("Number sold")
 plt.show()
 
+
+# Based on the above graph, we can see that coffee is the most popular product category for all stores.
+# Let's see what types of coffee products are the most popular for each store.
+# First we will look at the number of each coffee product sold for each store.
+
+# Function to get best coffee products for a given store
+def get_best_coffee_products(store_df):
+    coffee_products = store_df.loc[store_df['product_category'] == 'Coffee', ['product_type', 'transaction_qty']]
+    grouped_coffee_products = coffee_products.groupby('product_type').sum()
+    return grouped_coffee_products
+
+# Get best coffee products for each store
+best_coffee_store1 = get_best_coffee_products(store1_df)
+best_coffee_store2 = get_best_coffee_products(store2_df)
+best_coffee_store3 = get_best_coffee_products(store3_df)
+
+print(f"Product Type sold at Astoria" + "\n" + str(best_coffee_store1))
+print(f"Product Type sold at Lower Manhattan" + "\n" + str(best_coffee_store2))
+print(f"Product Type sold at Hell's Kitchen" + "\n" + str(best_coffee_store3))
+
+
+# Bar graph for each store
 # Function to get best coffee products for a given store
 def get_best_coffee_products(store_df):
     coffee_products = store_df.loc[store_df['product_category'] == 'Coffee', ['product_type', 'transaction_qty']]
@@ -193,20 +215,198 @@ best_coffee_store2 = get_best_coffee_products(store2_df)
 best_coffee_store3 = get_best_coffee_products(store3_df)
 
 # Prepare data for a bar graph
-store_names = ['Store 1', 'Store 2', 'Store 3']
+store_names = ["Astoria", "Lower Manhattan", "Hell's Kitchen"]
 dfs = [best_coffee_store1, best_coffee_store2, best_coffee_store3]
 
 # Plotting in a bar chart
 for store_name, best_coffee_products in zip(store_names, dfs):
     best_coffee_products.plot(kind='bar', legend=False)
-    plt.title(f'Best Coffee Products for {store_name}')
-    plt.xlabel("Product Type")
-    plt.ylabel("Transaction Quantity")
+    plt.title(f'Coffee Products Sold for {store_name}')
+    plt.xlabel("Coffee Type")
+    plt.ylabel("Number Sold")
     plt.show()
 
-#Graph 2: product_type {'Tea'} by store
-#Volume = #transaction_qty
+# Combined bar graph for all stores
+def get_best_coffee_products(store_df):
+    coffee_products = store_df.loc[store_df['product_category'] == 'Coffee', ['product_type', 'transaction_qty']]
+    grouped_coffee_products = coffee_products.groupby('product_type').sum()
+    return grouped_coffee_products
+
+# Get best coffee products for each store
+best_coffee_store1 = get_best_coffee_products(store1_df)
+best_coffee_store2 = get_best_coffee_products(store2_df)
+best_coffee_store3 = get_best_coffee_products(store3_df)
+
+# Combine data for all stores into a single DataFrame
+combined_data = pd.concat([best_coffee_store1, best_coffee_store2, best_coffee_store3], axis=1)
+combined_data.columns = ["Astoria", "Lower Manhattan", "Hell's Kitchen"]
+
+# Plotting in a single bar chart
+combined_data.plot(kind='bar')
+plt.title('Coffee Products Sold for All Stores')
+plt.xlabel("Coffee Type")
+plt.ylabel("Number Sold")
+plt.legend(loc='best')
+plt.show()
+
+#Line graph for all stores
+def get_best_coffee_products(store_df):
+    coffee_products = store_df.loc[store_df['product_category'] == 'Coffee', ['product_type', 'transaction_qty']]
+    grouped_coffee_products = coffee_products.groupby('product_type').sum()
+    return grouped_coffee_products
+
+# Get best coffee products for each store
+best_coffee_store1 = get_best_coffee_products(store1_df)
+best_coffee_store2 = get_best_coffee_products(store2_df)
+best_coffee_store3 = get_best_coffee_products(store3_df)
+
+# Combine data for all stores into a single DataFrame
+combined_data = pd.concat([best_coffee_store1, best_coffee_store2, best_coffee_store3], axis=1)
+combined_data.columns = ["Astoria", "Lower Manhattan", "Hell's Kitchen"]
+
+# Plotting in a line chart
+combined_data.plot(kind='line', marker='o', linestyle='-')
+
+# Set the title and labels
+plt.title('Best Coffee Products for All Stores')
+plt.xlabel("Coffee Type")
+plt.ylabel("Number Sold")
+plt.legend(loc='best')
+plt.xticks(rotation=45)
+plt.show()
+
+#We will now look at total sales for each coffee product for each store.
+#Graph 2: product_category {'Coffee'}, then break down by product_type for each store
 #Sales = #unit_price * transaction_qty
 #Astoria, Lower Manhattan, Hell's Kitchen
+
+# Function to get best coffee products for a given store and the total sales for each product
+def get_best_coffee_products(store_df):
+    coffee_products = store_df.loc[store_df['product_category'] == 'Coffee', ['product_type', 'transaction_qty', 'unit_price']]
+    grouped_coffee_products = coffee_products.groupby('product_type').sum()
+    grouped_coffee_products['totalsales'] = grouped_coffee_products['transaction_qty'] * grouped_coffee_products['unit_price']
+    return grouped_coffee_products
+
+# Get best coffee products for each store
+best_coffee_store1 = get_best_coffee_products(store1_df)
+best_coffee_store2 = get_best_coffee_products(store2_df)
+best_coffee_store3 = get_best_coffee_products(store3_df)
+
+# Print total sales for each product type for each store
+print("Astoria:")
+print(best_coffee_store1['totalsales']/ 1_000_000)
+
+print("\nLower Manhattan:")
+print(best_coffee_store2['totalsales']/ 1_000_000)
+
+print("\nHell's Kitchen:")
+print(best_coffee_store3['totalsales']/ 1_000_000)
+
+def get_best_coffee_products(store_df):
+    coffee_products = store_df.loc[store_df['product_category'] == 'Coffee', ['product_type', 'transaction_qty', 'unit_price']]
+    grouped_coffee_products = coffee_products.groupby('product_type').sum()
+    grouped_coffee_products['totalsales'] = grouped_coffee_products['transaction_qty'] * grouped_coffee_products['unit_price']
+    return grouped_coffee_products
+
+# Get best coffee products for each store
+best_coffee_store1 = get_best_coffee_products(store1_df)
+best_coffee_store2 = get_best_coffee_products(store2_df)
+best_coffee_store3 = get_best_coffee_products(store3_df)
+
+# Plot bar graphs for each store
+fig, axs = plt.subplots(3, 1, figsize=(10, 15), sharex=True)
+
+# Store 1
+axs[0].bar(best_coffee_store1.index, best_coffee_store1['totalsales'] / 1_000_000, color='blue')
+axs[0].set_title('Astoria')
+axs[0].set_ylabel('Total Sales (Millions)')
+axs[0].set_xticks(best_coffee_store1.index)
+axs[0].set_xticklabels(best_coffee_store1.index, rotation=45, ha='right')  # Rotate x-axis labels
+
+# Store 2
+axs[1].bar(best_coffee_store2.index, best_coffee_store2['totalsales'] / 1_000_000, color='green')
+axs[1].set_title('Lower Manhattan')
+axs[1].set_xlabel("Coffee Type")
+axs[1].set_ylabel('Total Sales (Millions)')
+axs[1].set_xticks(best_coffee_store2.index)
+axs[1].set_xticklabels(best_coffee_store2.index, rotation=45, ha='right')  # Rotate x-axis labels
+
+# Store 3
+axs[2].bar(best_coffee_store3.index, best_coffee_store3['totalsales'] / 1_000_000, color='orange')
+axs[2].set_title("Hell's Kitchen")
+axs[2].set_xlabel("Coffee Type")
+axs[2].set_ylabel('Total Sales (Millions)')
+axs[2].set_xticks(best_coffee_store3.index)
+axs[2].set_xticklabels(best_coffee_store3.index, rotation=45, ha='right')  # Rotate x-axis labels
+
+plt.tight_layout()
+plt.show()
+
+#Combined bar graph for all stores
+
+def get_best_coffee_products(store_df):
+    coffee_products = store_df.loc[store_df['product_category'] == 'Coffee', ['product_type', 'transaction_qty', 'unit_price']]
+    grouped_coffee_products = coffee_products.groupby('product_type').sum()
+    grouped_coffee_products['totalsales'] = grouped_coffee_products['transaction_qty'] * grouped_coffee_products['unit_price']
+    return grouped_coffee_products
+
+# Get best coffee products for each store
+best_coffee_store1 = get_best_coffee_products(store1_df)
+best_coffee_store2 = get_best_coffee_products(store2_df)
+best_coffee_store3 = get_best_coffee_products(store3_df)
+
+# Combine data for all stores into a single DataFrame
+combined_data = pd.concat([best_coffee_store1, best_coffee_store2, best_coffee_store3], axis=1)
+
+#Legend labels
+legend_labels = ["Astoria", "Lower Manhattan", "Hell's Kitchen"]
+
+# Plotting in a single bar chart
+combined_data.plot(kind='bar')
+plt.title('Coffee Products Sold for All Stores')
+plt.xlabel("Coffee Type")
+plt.ylabel("Number Sold")
+plt.legend(loc='best', labels=legend_labels)
+plt.xticks(rotation=45)
+plt.show()
+
+#Line graph for all stores
+
+def get_best_coffee_products(store_df):
+    coffee_products = store_df.loc[store_df['product_category'] == 'Coffee', ['product_type', 'transaction_qty', 'unit_price']]
+    grouped_coffee_products = coffee_products.groupby('product_type').sum()
+    grouped_coffee_products['totalsales'] = grouped_coffee_products['transaction_qty'] * grouped_coffee_products['unit_price']
+    return grouped_coffee_products
+
+# Get best coffee products for each store
+best_coffee_store1 = get_best_coffee_products(store1_df)
+best_coffee_store2 = get_best_coffee_products(store2_df)
+best_coffee_store3 = get_best_coffee_products(store3_df)
+
+# Combine data for all stores into a single DataFrame
+combined_data = pd.concat([best_coffee_store1, best_coffee_store2, best_coffee_store3], axis=1)
+
+# Set legend labels
+legend_labels = ["Astoria", "Lower Manhattan", "Hell's Kitchen"]
+
+# Set line colors
+line_colors = ['blue', 'green', 'orange']
+
+# Plotting in a single line chart
+ax = combined_data.plot(kind='line', marker='o', linestyle='-', color=line_colors)
+
+# Set the title and labels
+plt.title('Best Coffee Products for All Stores')
+plt.xlabel("Coffee Type")
+plt.ylabel("Number Sold")
+
+# Set the legend with custom labels and colors
+ax.legend(legend_labels, loc='best', handlelength=1.5, handleheight=1.5)
+
+# Remove the horizontal line at 0 by setting y-axis limits
+ax.set_ylim(bottom=0.1)  # Adjust the value as needed
+
+plt.xticks(rotation=45)
+plt.show()
 
 
