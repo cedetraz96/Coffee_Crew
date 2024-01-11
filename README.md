@@ -25,6 +25,10 @@
           - Transaction Analysis
     - HourlySalesAnalysis
           - Time-based transaction Analysis
+    - Images
+          - Relevant summary images
+    - Resources
+          - CSV file containing dataset
           
 ## Objectives
     Analyze sales data to identify trends and patterns.
