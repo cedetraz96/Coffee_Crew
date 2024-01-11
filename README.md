@@ -13,9 +13,10 @@
 
 ## Table of Contents
     - Executive_Summary.md 
-          - Summary of the project. 
+          - Summary of the project 
     - Maven Roasters Project1.pptx
-          - Project Powerpoint. Also can be found at: https://docs.google.com/presentation/d/1q3n9MDYk1tvd7PisICls28vKyR-ajpgZ6cf6F6oF9yM/edit?usp=sharing. 
+          - Project Powerpoint
+          https://docs.google.com/presentation/d/1q3n9MDYk1tvd7PisICls28vKyR-ajpgZ6cf6F6oF9yM/edit?usp=sharing. 
     - Best_Sellers.jpynb 
           - Product Analysis
     - Location_total_revenue_&_growth_analysis.jpynb
@@ -33,10 +34,11 @@
 ## Data Source
     The dataset comprises transaction records from the three Mavens Roaster locations in NYC and can be found for
     download here: https://www.kaggle.com/datasets/agungpambudi/trends-product-coffee-shop-sales-revenue-dataset.  
-    This dataset includes 149,116 unique transactions and each transaction includes transaction_id, transaction_date,
-    transaction_time, transaction_quantity, store_id, store_location, product_id, unit_price, product_category,
-    product_type, and product_detail. The author of this dataset has waived their rights to the work, meaning there
-    is no copyright protection and that this data can be used for any purpose without permission. 
+    This dataset includes 149,116 unique transactions and each transaction includes transaction_id, 
+    transaction_date, transaction_time, transaction_quantity, store_id, store_location, product_id, unit_price,
+    product_category, product_type, and product_detail. The author of this dataset has waived their rights to
+    the work, meaning there is no copyright protection and that this data can be used for any purpose without
+    permission. 
 
 ## Results and Conclusions
     We observed consistent daily transaction patterns, but with notable variations across Locations. The six-month
@@ -45,13 +47,13 @@
     of adapting staffing strategies to the specific needs of each location, focusing on morning staffing in Lower
     Manhattan and Hell's Kitchen, and afternoon coverage in Astoria. While future planning should be cautious,
     using the current sales data as a base and expanding it with thorough market analysis can lead to more dynamic
-    and informed business decisions. Our research also pinpointed key products that drive sales and customer visits,
-    varying across locations and seasons, and identified the most profitable times for each store. We recommend
-    customized pricing and staffing approaches to optimize revenue while ensuring competitiveness and operational
-    efficiency. Additionally, we found that all three locations are comparably successful in terms of overall
-    revenue and growth. We aim to reassess these metrics once growth stabilizes to better allocate resources
-    and determine if certain location-specific factors are influencing performance, and whether these can be
-    applied across other stores.
+    and informed business decisions. Our research also pinpointed key products that drive sales and customer
+    visits, varying across locations and seasons, and identified the most profitable times for each store. We
+    recommend customized pricing and staffing approaches to optimize revenue while ensuring competitiveness and
+    operational efficiency. Additionally, we found that all three locations are comparably successful in terms
+    of overall revenue and growth. We aim to reassess these metrics once growth stabilizes to better allocate
+    resources and determine if certain location-specific factors are influencing performance, and whether 
+    these can be applied across other stores.
 
 ## Next Steps
     Our investigation has also brought to light several potential research avenues, such as examining customer
