@@ -1,15 +1,25 @@
 # Maven Roasters Transaction Analysis
 
+## Project Overview
+    Maven Roasters is a NYC-based coffee shop with three locations: Astoria, Lower Manhattan,
+    and Hell's Kitchen. This project seeks to analyze transaction data from Maven Roasters in
+    order to identify insights that can help bolster Maven Roasters success.
+
 ## Contributing Authors
     Cindy Detraz
     Craig Senatore
     Fisher Howe
     Samuel Neal
 
-## Project Overview
-    Maven Roasters is a NYC-based coffee shop with three locations: Astoria, Lower Manhattan,
-    and Hell's Kitchen. This project seeks to analyze transaction data from Maven Roasters in
-    order to identify insights that can help bolster Maven Roasters success.
+## Data Source
+    The dataset comprises transaction records from the three Mavens Roaster locations in NYC
+    and can be found for download here:
+    https://www.kaggle.com/datasets/agungpambudi/trends-product-coffee-shop-sales-revenue-dataset.  
+    This dataset includes 149,116 unique transactions and each transaction includes
+    transaction_id, transaction_date, transaction_time, transaction_quantity, store_id,
+    store_location, product_id, unit_price, product_category, product_type, and product_detail.
+    The author of this dataset has waived their rights to the work, meaning there is no copyright
+    protection and that this data can be used for any purpose without permission. 
 
 ## Table of Contents
     - Executive_Summary.md 
@@ -34,16 +44,6 @@
     Analyze sales data to identify trends and patterns.
     Compare performance across the three locations.
     Provide actionable insights for business growth and customer satisfaction.
-
-## Data Source
-    The dataset comprises transaction records from the three Mavens Roaster locations in NYC
-    and can be found for download here:
-    https://www.kaggle.com/datasets/agungpambudi/trends-product-coffee-shop-sales-revenue-dataset.  
-    This dataset includes 149,116 unique transactions and each transaction includes
-    transaction_id, transaction_date, transaction_time, transaction_quantity, store_id,
-    store_location, product_id, unit_price, product_category, product_type, and product_detail.
-    The author of this dataset has waived their rights to the work, meaning there is no copyright
-    protection and that this data can be used for any purpose without permission. 
 
 ## Results and Conclusions
     We observed consistent daily transaction patterns, but with notable variations across
